@@ -43,6 +43,8 @@ private:
     long long m_column;
 
     //二维动态数组
+    //内存不够
+    //long[10000][10000]就会爆掉
     vector<vector<T>> data;
 
 public:
@@ -65,7 +67,7 @@ public:
     matrix(vector<vector<T>> data, long long m_row = 0, long long m_column = 0)
     {        
             this->row = data.size();
-            this->column = data.size();
+            this->column = data[0].size();
             this->m_row = m_row;
             this->m_column = m_column;
             this->data = data;
